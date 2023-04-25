@@ -1,0 +1,17 @@
+[Unit]
+Description=FastAPI Project
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/fastapi_project
+ExecStart=/home/ubuntu/venv/bin/gunicorn main:app -c /home/ubuntu/fastapi_project/gunicorn_conf.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+
+
