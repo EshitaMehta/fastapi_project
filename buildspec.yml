@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - apt-get update
+      - apt-get install -y python3-pip
+      - pip3 install --upgrade pip
+      - pip3 install -r requirements.txt
+  build:
+    commands:
+      - gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app --bind unix:/tmp/gunicorn.sock
+      - mkdir -p dist
+      - cp -r ./* dist/
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'
