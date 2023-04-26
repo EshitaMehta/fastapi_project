@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files: 
   - source: /
-    destination: /home/ubuntu/fastapi_project
+    destination: /var/www/fastapi_project
 permissions:
-  - object: /home/ubuntu/fastapi_project
+  - object: /var/www/fastapi_project
     owner: ubuntu
     group: ubuntu
 hooks:
