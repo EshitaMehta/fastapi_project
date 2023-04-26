@@ -11,9 +11,6 @@ phases:
   build:
     commands:
       - echo Prebuild ops
-      - pip install gunicorn
-      - pip install fastapi[all]
-      - pip install wheel
 #      - pip3 install -r requirements.txt
   post_build:
     commands:
