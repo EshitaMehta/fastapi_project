@@ -5,7 +5,7 @@ app = FastAPI()
 
 @app.get("/")
 def index():
-    return {"message": "Hello World"}
+    return {"message": "Hello World of Magic"}
 
 
 # Press the green button in the gutter to run the script.
